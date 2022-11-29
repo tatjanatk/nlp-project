@@ -19,31 +19,24 @@
         <main>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="url" type="url" name="url" value="" placeholder="Type in a URL...">
-                    <input id="submit" type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="url" type="text" name="input" value="" placeholder="Type in a URL...">
+                    <input id="submit" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
+            </section>
+
+            <section id="errorBox">
+                <div id="error"></div>
             </section>
 
             <section id="results">
                 <h2><strong>API Response:</strong></h2>
-                <ul>
-                    <li>
-                        <h3>Text Polarity:</h3>
-                        <p id="polarity"></p>
-                        <h4>Confidence: </h4>
-                        <p id="polarity-confidence"></p>
-                    </li>
+                    <div id="polarity"></div>
+                    <div id="agreement"></div>
+                    <div id="subjectivity"></div>
+                    <div id="conficence"></div>
 
-                    <li>
-                        <h3>Text Subjectivity:</h3>
-                        <p id="subjectivity"></p>
-                        <h4>Confidence: </h4>
-                        <p id="subjectivity-confidence"></p>
-                    </li>
-
-                    <h3>Text Excerpt:</h3>
-                    <p id="excpert"></p>
-                </ul>
+                    <h3>Text:</h3>
+                    <div id="text"></div>
             </section>
         </main>
 

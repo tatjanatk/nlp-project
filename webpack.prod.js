@@ -9,7 +9,7 @@ module.exports = {
     entry: './src/client/index.js',
     mode: 'production',
     output: {
-        filename: "[name].[contenthash].js",
+        filename: "[name].js",
         path: path.resolve(__dirname, "dist")
     },
     optimization: {
@@ -38,6 +38,6 @@ module.exports = {
                 removeComments: true
             }
         }),
-        new MiniCssExtractPlugin({filename: "[name].[contenthash].css"})
+        new MiniCssExtractPlugin({filename: "[name].css"})
     ]
 }
