@@ -1,28 +1,55 @@
+// Dependencies
 const dotenv = require('dotenv');
 dotenv.config();
-var path = require('path')
-const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+var path = require('path');
+const express = require('express');
 
-const app = express()
+//const mockAPIResponse = require('./mockAPI.js');
 
-app.use(express.static('dist'))
+projectData = {};
 
-console.log(__dirname)
+const app = express();
+
+// start instance of app
+app.use(express.static('dist'));
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
-})
+});
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
-})
+const port = 8080;
 
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+app.listen(port, listening ());
 
-var textapi = new mcloud({
+function listening() {
+    console.log("server running");
+	console.log(`running on localhost ${port}`);
+}
+
+// app.get('/test', function (req, res) {
+//    res.send(mockAPIResponse)
+//});
+
+var textapi = new mcloud
+({
     application_key: process.env.API_KEY
-  });
+});
+
+//GET route
+app.get("/all", sendData);
+
+function sendData (req, res) {
+    res.send(projectData);
+}
+
+//POST route
+app.post("/add", addData);
+
+function addData(req, res){
+    console.log(req.body);
+    newEntry = {
+
+    }
+    projectData = newEntry;
+}

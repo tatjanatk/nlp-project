@@ -1,7 +1,7 @@
 # nlp-project
 Natural Languange Processing Project for the Front End Web Developer course from Udacity \
 Author: Tatjana \
-Used technologies: HTML, Sass, JavaScript, Node (webpack, express, ...), MeaningCloud API \
+Used technologies: HTML, Sass, JavaScript, Node (webpack, express, ...), MeaningCloud API
 
 ## Dependencies
 "@babel/core": "^7.20.5",\
