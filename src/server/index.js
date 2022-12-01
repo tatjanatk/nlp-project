@@ -25,7 +25,7 @@ app.use(express.static('dist'));
 console.log(__dirname);
 
 // designates what port the app will listen to for incoming requests
-const port = 8080;
+const port = 8081;
 
 app.listen(port, listening ());
 

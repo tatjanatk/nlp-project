@@ -8,7 +8,7 @@ export function handleSubmit(event) {
     if (Client.isValidUrl (formURL)) {
         console.log("::: Form input is valid :::")
         
-        postData("http://localhost:8080/api", {url: formURL})
+        postData("http://localhost:8081/api", {url: formURL})
         
         .then(function(res) {
             document.getElementById("polarity").innerHTML = 'Polarity: '+ polarityChecker(res.score_tag);
