@@ -30,11 +30,9 @@ Used technologies: HTML, Sass, JavaScript, Node (webpack, express, ...), Meaning
 5. change the directory to the folder path: ***cd path***
 6. install all npm packages you need: ***npm install***
 7. get your personal API_KEY of the [MeaningCloud API](https://www.meaningcloud.com/developer/account/subscriptions)
-8. insert it in the **src/server/index.js** file 
+8. insert it in a ***.env*** file 
     ```javascript
-    var textapi = new mcloud({
-        application_key: API_KEY
-    });
+        API_KEY=*************
     ```
 9. build the project: ***npm run build-prod***
 10. start a local server, the website opens automatically: ***npm run build-dev***
