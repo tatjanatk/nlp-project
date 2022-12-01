@@ -48,6 +48,7 @@ app.post('/api', async function(req, res) {
     console.log(`You entered: ${userInput}`);
     const apiURL = baseURL + "key=" + apiKey + "&url=" + userInput + "&lang=en";
     console.log(apiURL);
+    //here that doesn't work
     const response = await fetch(apiURL);
     const mcData = await response.json();
     console.log(mcData);
