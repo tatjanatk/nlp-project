@@ -3,17 +3,19 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: './src/client/index.js',
     mode: 'production',
     output: {
-        filename: "[name].js",
-        path: path.resolve(__dirname, "dist")
-    },
+        path: path.resolve(__dirname, "dist"),
+        libraryTarget: 'var',
+        library: 'Client'
+    },   
     optimization: {
-        minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
+        minimizer: [new TerserPlugin({}), new CssMinimizerPlugin({})],
     },
     module: {
         rules: [
@@ -31,13 +33,11 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
-            filename: "./index.html",
-            minify: {
-                removeAttributeQuotes: true,
-                collapseWhitespace: true,
-                removeComments: true
-            }
+            filename: "./index.html"
         }),
-        new MiniCssExtractPlugin({filename: "[name].css"})
+        new MiniCssExtractPlugin({filename: "[name].css"}),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [path.join(__dirname, "dist/**/*")],
+        }),
     ]
 }

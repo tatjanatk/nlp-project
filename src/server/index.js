@@ -25,14 +25,14 @@ app.use(express.static('dist'));
 console.log(__dirname);
 
 // MeaningCloud API Config
-const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?'
-const apiKey = process.env.API_KEY
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?';
+const apiKey = process.env.API_KEY;
 console.log(`Your API Key is ${process.env.API_KEY}`);
 let userInput = [];
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
-});
+})
 
 // app.get('/test', function (req, res) {
 //    res.send(mockAPIResponse)
@@ -51,11 +51,11 @@ app.post('/mcCloud', async function(req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-const port = 8080;
+const port = 8081;
 
 app.listen(port, listening ());
 
 function listening() {
     console.log("server running");
-	console.log(`running on localhost ${port}`);
+	console.log(`running on localhost:${port}`);
 }
