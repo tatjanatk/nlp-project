@@ -1,6 +1,10 @@
-// keep api key private
-//const dotenv = require('dotenv');
-//dotenv.config();
+// dependencies
+var path = require("path");
+const axios = require("axios");
+
+//keep api key private
+const dotenv = require('dotenv');
+dotenv.config();
 
 const express = require('express');
 
@@ -19,8 +23,10 @@ app.use(cors());
 // main project folder
 app.use(express.static('dist'));
 
+console.log(__dirname);
+
 // designates what port the app will listen to for incoming requests
-const port = 8080;
+const port = 8081;
 
 const server = app.listen(port, listening ());
 
@@ -28,45 +34,22 @@ function listening() {
 	console.log(`server running on localhost:${port}`);
 }
 
-/**  MeaningCloud API Config
-const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?';
+//  MeaningCloud API Config
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
 const apiKey = process.env.API_KEY;
 console.log(`Your API Key is ${process.env.API_KEY}`);
-*/
 
 // GET
 app.get('/', function (req, res) {
-    res.send(projectData);
     res.sendFile('dist/index.html');
 });
 
 // POST
 app.post("/api", addData);
 
-function addData(req,res){
-    console.log(req.body);
-    newEntry = {
-        score_tag: req.body.score_tag,
-        agreement: req.body.agreement,
-        subjectivity: req.body.subjectivity,
-        confidence: req.body.confidence,
-        irony: req.body.irony
-        //text: req.body.text
-    }
-    projectData = newEntry;
+function addData(req, res){
+    axios.post(`${baseURL}${apiKey}&url=${req.body.url}&lang=en`).then((response) => {
+        res.send(response.data);
+        console.log(response.data);
+    });
 }
-
-/** 
-// POST
-app.post('/api', async function(req, res) {
-    let userInput = req.body.url;
-    console.log(`You entered: ${userInput}`);
-    const apiURL = baseURL + "key=" + apiKey + "&url=" + userInput + "&lang=en";
-    console.log(apiURL);
-    //here that doesn't work
-    const response = await fetch(apiURL);
-    const mcData = await response.json();
-    console.log(mcData);
-    res.send(mcData);
-})
-*/
