@@ -39,12 +39,12 @@ const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
 const apiKey = process.env.API_KEY;
 console.log(`Your API Key is ${process.env.API_KEY}`);
 
-// GET
+// GET data
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
 });
 
-// POST
+// POST data
 app.post("/api", addData);
 
 function addData(req, res){

@@ -11,7 +11,7 @@ export function handleSubmit(event) {
         console.log("::: Form input is valid :::")
         
         axios
-            .post("/api", { url: url})
+            .post("/api", { url: formURL})
             .then((res) => updateUI(res.data))
             .catch((error) => console.log("Error: " + error));
 
@@ -20,10 +20,10 @@ export function handleSubmit(event) {
     }
 };
 
-export const updateUI = async () => {
-    document.getElementById("polarity").innerHTML = 'Polarity: '+ polarityChecker(res.score_tag);
-    document.getElementById("agreement").innerHTML = `Agreement: ${res.agreement}`;
-    document.getElementById("subjectivity").innerHTML = `Subjectivity: ${res.subjectivity}`;
+export const updateUI = async (response) => {
+    document.getElementById("polarity").innerHTML = 'Polarity: '+ polarityChecker(response.score_tag);
+    document.getElementById("agreement").innerHTML = `Agreement: ${response.agreement}`;
+    document.getElementById("subjectivity").innerHTML = `Subjectivity: ${response.subjectivity}`;
     document.getElementById("confidence").innerHTML = `Confidence: ${response.confidence}`;
     document.getElementById("irony").innerHTML = `Irony: ${response.irony}`;
 }
