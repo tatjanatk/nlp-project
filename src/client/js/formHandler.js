@@ -26,11 +26,11 @@ export function handleSubmit(event) {
 // show response in UI
 export const updateUI = async (response) => {
     document.getElementById("polarity").innerHTML = 'Polarity: '+ checkPolarity(response.score_tag);
-    document.getElementById("agreement").innerHTML = `Agreement: ${response.agreement.toLowerCase()}`;
-    document.getElementById("subjectivity").innerHTML = `Subjectivity: ${response.subjectivity.toLowerCase()}`;
-    document.getElementById("confidence").innerHTML = `Confidence: ${response.confidence.toLowerCase()}`;
-    document.getElementById("irony").innerHTML = `Irony: ${response.irony.toLowerCase()}`;
-    document.getElementById("text").innerHTML = response.text.toLowerCase();
+    document.getElementById("agreement").innerHTML = `Agreement: ${response.agreement}`;
+    document.getElementById("subjectivity").innerHTML = `Subjectivity: ${response.subjectivity}`;
+    document.getElementById("irony").innerHTML = `Irony: ${response.irony}`;
+    document.getElementById("confidence").innerHTML = `Confidence: ${response.confidence}`;
+    document.getElementById("text").innerHTML =  `Excerpt of the Website: ${response.sentence_list[0].text}`;
 }
 
 // turn score tag in words
@@ -55,5 +55,5 @@ export const checkPolarity = (score) => {
         case "NONE":
             pol = "no sentiment";
     }
-    return pol;
+    return pol.toUpperCase();
 }
