@@ -1,7 +1,15 @@
+$grey: #30343F;
+$white: #FAFAFF;
+$lavender: #E4D9FF;
+$blue: #273469;
+$dark-blue: #1E2749;
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: $dark-blue;
+    color: $white;
 }
 
 main {
