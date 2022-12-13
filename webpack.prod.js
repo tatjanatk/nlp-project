@@ -29,7 +29,6 @@ module.exports = {
                 test: /\.scss$/,
                 use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
             },
-            
             {
 				test: /\.(svg|png|jpeg|jpg|gif)$/i,
                 use: {
@@ -38,8 +37,8 @@ module.exports = {
                         name: "[path][name].[ext]"
                     }
                 }
-			}
-        ]
+			},
+        ],
     },
     plugins: [
         new HtmlWebPackPlugin({

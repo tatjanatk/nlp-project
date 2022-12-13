@@ -31,7 +31,7 @@ export function handleSubmit(event) {
 
 // show response in UI
 export const updateUI = async (response) => {
-    document.getElementById("response").innerHTML = "API Response:";
+    document.getElementById("response").innerHTML = "API Response: ";
     document.getElementById("polarity").innerHTML = 'Polarity: '+ checkPolarity(response.score_tag);
     document.getElementById("agreement").innerHTML = `Agreement: ${response.agreement}`;
     document.getElementById("subjectivity").innerHTML = `Subjectivity: ${response.subjectivity}`;
