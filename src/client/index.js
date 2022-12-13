@@ -1,3 +1,4 @@
+import { setImg } from "./js/formHandler";
 import { handleSubmit } from "./js/formHandler";
 import { updateUI } from "./js/formHandler";
 import { checkPolarity } from "./js/formHandler";
@@ -10,6 +11,7 @@ import './styles/form.scss';
 import './styles/header.scss';
 
 export {
+    setImg,
     isValidUrl,
     handleSubmit,
     updateUI,

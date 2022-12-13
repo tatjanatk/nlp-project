@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
+
+$ubuntu: 'Ubuntu', sans-serif; 
+$cloud: 'Rubik Puddles', cursive;
+
 $grey: #30343F;
 $white: #FAFAFF;
 $lavender: #E4D9FF;
@@ -10,13 +16,37 @@ body {
     min-height: 100vh;
     background-color: $dark-blue;
     color: $white;
+    font-family: $ubuntu;
 }
 
 main {
     flex: 2;
+    h1 {
+        font-family: $cloud;
+        font-size: 50px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 20px;
+    }
+}
+
+#errorBox {
+    color: $lavender;
+    background-color: $grey;
 }
 
 section {
     max-width: 800px;
     margin: 50px auto;
+    h2 {
+        font-size: 20px;
+    }
+    div {
+        font-size: 18px;
+        margin-bottom: 3px;
+    }
 }

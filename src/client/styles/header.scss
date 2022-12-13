@@ -4,4 +4,8 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
+    #logo {
+        height: 50px;
+        width: 50px;
+    }
 }
