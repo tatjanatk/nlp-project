@@ -1,10 +1,10 @@
-@use "base";
+@import "base";
 
 form {
-    box-shadow: 7px 7px #FAFAFF;
+    box-shadow: 7px 7px $white;
     border-radius: 5px;
     padding: 40px;
-    background-color: #E4D9FF;
+    background-color: $lavender;
 }
 
 input {
@@ -16,14 +16,14 @@ input {
 }
 
 #submit {
-    background-color: #1E2749;
-    border: 2px solid #1E2749;
+    background-color: $dark-blue;
+    border: 2px solid $dark-blue;
     border-radius: 5px;
-    color: #FAFAFF;
+    color: $white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
 
     &:hover {
-        background-color: #273469;
+        background-color: $blue;
     }
 }
