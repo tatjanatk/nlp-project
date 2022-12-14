@@ -2,7 +2,8 @@ import { handleSubmit } from "./js/formHandler";
 import { updateUI } from "./js/formHandler";
 import { checkPolarity } from "./js/formHandler";
 import { isValidUrl } from "./js/urlChecker";
-import { setImg } from "./js/formHandler";
+import { setImg } from "./js/setImg";
+import { setDate } from "./js/setDate";
 
 import './styles/resets.scss';
 import './styles/base.scss';
@@ -17,5 +18,6 @@ export {
     handleSubmit,
     updateUI,
     checkPolarity,
-    setImg
+    setImg,
+    setDate
 }
