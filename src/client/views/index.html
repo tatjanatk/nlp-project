@@ -17,15 +17,14 @@
         <main>
             <h1>MeaningCloud API</h1>
             <h2>~ Sentiment Analysis ~</h2>
+
+                <div id="error"></div>
+
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input id="url" type="text" name="input" value="" placeholder="Type in a URL...">
                     <input id="submit" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
-            </section>
-
-            <section id="errorBox">
-                <div id="error"></div>
             </section>
 
             <section id="results">

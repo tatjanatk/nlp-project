@@ -19,19 +19,25 @@ export function handleSubmit(event) {
 
     // show error text, if URL is not valid
     } else {
-        document.getElementById("error").innerHTML = "Invalid URL";
+        document.getElementById("results").style.visibility = "hidden";
+        document.getElementById("text").style.visibility = "hidden";
+        document.getElementById("error").style.visibility = "visible";
+        document.getElementById("error").innerHTML = " Invalid URL, Please try again! ";
     }
 };
 
 // show response in UI
 export const updateUI = async (response) => {
-    document.getElementById("response").innerHTML = "API Response: ";
-    document.getElementById("polarity").innerHTML = 'Polarity: '+ checkPolarity(response.score_tag);
-    document.getElementById("agreement").innerHTML = `Agreement: ${response.agreement}`;
-    document.getElementById("subjectivity").innerHTML = `Subjectivity: ${response.subjectivity}`;
-    document.getElementById("irony").innerHTML = `Irony: ${response.irony}`;
-    document.getElementById("confidence").innerHTML = `Confidence: ${response.confidence}`;
-    document.getElementById("text").innerHTML =  `Excerpt of the Website: ${response.sentence_list[0].text}`;
+    document.getElementById("error").style.visibility = "hidden";
+    document.getElementById("results").style.visibility = "visible";
+    document.getElementById("response").innerHTML = "<strong>API Response:<strong>";
+    document.getElementById("polarity").innerHTML = '<strong>Polarity: </strong>'+ checkPolarity(response.score_tag);
+    document.getElementById("agreement").innerHTML = `<strong>Agreement: </strong>${response.agreement}`;
+    document.getElementById("subjectivity").innerHTML = `<strong>Subjectivity: </strong>${response.subjectivity}`;
+    document.getElementById("irony").innerHTML = `<strong>Irony: </strong>${response.irony}`;
+    document.getElementById("confidence").innerHTML = `<strong>Confidence: </strong>${response.confidence}`;
+    document.getElementById("text").style.visibility = "visible";
+    document.getElementById("text").innerHTML =  `<strong>Excerpt of the Website: <br></strong>${response.sentence_list[3].text}`;
 }
 
 // turn score tag in words

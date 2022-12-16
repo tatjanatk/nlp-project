@@ -34,19 +34,51 @@ main {
     }
 }
 
-#errorBox {
-    color: $lavender;
-    background-color: $grey;
+#error {
+    font-size: 15px;
+    margin-top: 20px;
+    text-align: center;
+    visibility: hidden;
+    color: red;
+    font-weight: bold;
+    padding: 10px;
 }
 
 section {
     max-width: 800px;
     margin: 50px auto;
     h2 {
-        font-size: 20px;
+        font-size: 25px;
     }
     div {
         font-size: 18px;
-        margin-bottom: 3px;
+        margin-bottom: 10px;
+        text-align: center;
     }
+}
+
+#response {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#results {
+    visibility: hidden;
+    background-color: $blue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#irony {
+    margin-bottom: 20px;
+}
+
+#text {
+    visibility: hidden;
+    margin: 10px 5px;
+    padding: 10px;
+    background-color: $white;
+    color: $dark-blue;
+    border-radius: 10px;
+    line-height: 25px;
 }
